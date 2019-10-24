@@ -3,8 +3,14 @@ package com.example.myapplication;
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.content.Intent;
 import android.os.Bundle;
+
+
+
+
+
+import android.content.Intent;
+
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
@@ -12,30 +18,20 @@ import android.widget.Toast;
 
 import com.google.firebase.auth.FirebaseAuth;
 
-public class Review extends AppCompatActivity {
-
-    Button bt_dhaka;
-
-    FirebaseAuth mAuth;
-
+public class CreatePlan extends AppCompatActivity {
+    Button createPlanButton;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_review);
-        this.setTitle("Places' Review");
-        mAuth = FirebaseAuth.getInstance();
-
-
-        bt_dhaka = (Button) findViewById(R.id.bt_dhaka);
-
-        bt_dhaka.setOnClickListener(new View.OnClickListener() {
+        setContentView(R.layout.activity_create_plan);
+        createPlanButton=(Button)findViewById(R.id.createPlanButton);
+        createPlanButton.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View v) {
-                Intent intent = new Intent(com.example.myapplication.Review.this,Dhaka.class);
+            public void onClick(View view) {
+                Intent intent = new Intent(CreatePlan.this, CreatePlanDetails.class);
                 startActivity(intent);
             }
         });
-
     }
 
     @Override
@@ -44,13 +40,6 @@ public class Review extends AppCompatActivity {
         getMenuInflater().inflate(R.menu.menu_layout,menu);
         return super.onCreateOptionsMenu(menu);
     }
-
-
-
-
-
-
-
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {

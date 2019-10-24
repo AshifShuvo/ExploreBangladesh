@@ -7,7 +7,7 @@ import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
 
     private Button button;
@@ -15,16 +15,22 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
+        this.setTitle("Explore");
 
-        button = (Button) findViewById(R.id.bt_wel);
+        button = (Button) findViewById(R.id.bt_getStarted);
 
-        button.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
+        button.setOnClickListener(this);
 
-                Intent intent = new Intent(MainActivity.this,Menu.class);
+
+    }
+
+    @Override
+    public void onClick(View v) {
+        switch (v.getId()){
+            case R.id.bt_getStarted:
+                Intent intent = new Intent(getApplicationContext(),Menu.class);
                 startActivity(intent);
-            }
-        });
+                break;
+        }
     }
 }

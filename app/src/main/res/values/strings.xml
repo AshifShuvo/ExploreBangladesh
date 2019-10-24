@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Explore Bangladesh</string>
+    <string name="app_name">Explore</string>
     <string name="welcome">Welcome to Explore Bangladesh</string>
     <string name="Menu">Go to main Menu</string>
     <string name="review">Review</string>
@@ -12,5 +12,11 @@
         "Create Your plan here"
     </string>
     <string name="action_settings">Settings</string>
+    <string name="nav_open">Openr</string>
+    <string name="nav_close">Close</string>
+    <string name="Forgot">Forgot Your Password?</string>
+    <string name="SignUp">"Didn't have any account? Sign Up here."</string>
+
+
 </resources>
     
